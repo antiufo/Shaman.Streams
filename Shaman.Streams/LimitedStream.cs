@@ -100,7 +100,7 @@ namespace Shaman.Runtime
         public override int ReadByte()
         {
             if (position == length) return -1;
-            var b = base.ReadByte();
+            var b = baseStream.ReadByte();
             if (b != -1) position++;
             return b;
         }
