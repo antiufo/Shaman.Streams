@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1.2",
+  "version": "1.0.1.4",
   "authors": [
     "Andrea Martinelli"
   ],
@@ -9,11 +9,19 @@
     "keyFile": "ShamanOpenSourceKey.snk",
     "define": [
       "STANDALONE"
-    ]
+    ],
+    "compile": {
+      "include": []
+    }
   },
   "frameworks": {
     "net45": {},
     "netstandard1.3": {
+      "compilationOptions": {
+        "define": [
+          "CORECLR"
+        ]
+      },
       "dependencies": {
         "System.Runtime": "4.1",
         "System.Runtime.Extensions": "4.1",
