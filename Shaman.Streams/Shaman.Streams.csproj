@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <VersionPrefix>1.0.1.10</VersionPrefix>
+    <Authors>Andrea Martinelli</Authors>
+    <TargetFrameworks>net45;netstandard1.3</TargetFrameworks>
+    <DefineConstants>$(DefineConstants);STANDALONE</DefineConstants>
+    <AssemblyName>Shaman.Streams</AssemblyName>
+    <AssemblyOriginatorKeyFile>ShamanOpenSourceKey.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageId>Shaman.Streams</PackageId>
+    <PackageIconUrl>http://shaman.io/images/shaman-nuget-icon.png</PackageIconUrl>
+    <PackageProjectUrl>http://shaman.io/</PackageProjectUrl>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <DefineConstants>$(DefineConstants);CORECLR</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="System.Runtime" Version="4.1" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.1" />
+    <PackageReference Include="System.Threading" Version="4.1" />
+    <PackageReference Include="System.IO" Version="4.1" />
+  </ItemGroup>
+</Project>
