@@ -18,3 +18,4 @@ using Shaman.Runtime;
 var seekable = new UnseekableStreamWrapper(gzipStream);
 seekable.Seek(1024, SeekOrigin.Current);
 ```
+
